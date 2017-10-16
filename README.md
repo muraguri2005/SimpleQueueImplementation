@@ -5,4 +5,4 @@ Queue
 Node is where the data and reference to other elements in the queue are stored.
 Queue is the implementation class.
 A Queue basically has a tail and a head.
-Elemenets are added at the head and removed from the tail.
+Elemenets are added at the tail and removed from the head.
