@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vNQ-Wy-Wht">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Simple Queue Implementation-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SimpleQueueImplementation" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,88 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="41S-8g-3hH">
+                                <rect key="frame" x="20" y="72" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFf-uJ-IPB">
+                                <rect key="frame" x="20" y="110" width="335" height="30"/>
+                                <state key="normal" title="Enter element to queue"/>
+                                <connections>
+                                    <action selector="enqueue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D7V-sV-wQ1"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dequeued element " lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WB5-XP-3p5">
+                                <rect key="frame" x="20" y="148" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t8P-79-uUs">
+                                <rect key="frame" x="20" y="177" width="335" height="30"/>
+                                <state key="normal" title="Dequeue element"/>
+                                <connections>
+                                    <action selector="dequeue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TVT-9W-BJA"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="elements" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBC-R1-hgN">
+                                <rect key="frame" x="20" y="215" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="sBC-R1-hgN" secondAttribute="trailing" constant="20" symbolic="YES" id="1gT-wm-t8x"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sBC-R1-hgN" secondAttribute="bottom" priority="250" constant="8" symbolic="YES" id="4fm-2K-jRg"/>
+                            <constraint firstItem="sBC-R1-hgN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="8Db-AK-BtF"/>
+                            <constraint firstItem="41S-8g-3hH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="9DZ-yg-KQW"/>
+                            <constraint firstAttribute="trailing" secondItem="WB5-XP-3p5" secondAttribute="trailing" constant="20" symbolic="YES" id="Acn-vu-yeK"/>
+                            <constraint firstItem="t8P-79-uUs" firstAttribute="top" secondItem="WB5-XP-3p5" secondAttribute="bottom" constant="8" symbolic="YES" id="NQz-R4-hd8"/>
+                            <constraint firstItem="t8P-79-uUs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="Sy0-04-mkR"/>
+                            <constraint firstItem="sFf-uJ-IPB" firstAttribute="top" secondItem="41S-8g-3hH" secondAttribute="bottom" constant="8" symbolic="YES" id="ayH-Nh-9WT"/>
+                            <constraint firstItem="WB5-XP-3p5" firstAttribute="top" secondItem="sFf-uJ-IPB" secondAttribute="bottom" constant="8" symbolic="YES" id="chi-5T-3PO"/>
+                            <constraint firstItem="WB5-XP-3p5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="gVH-g0-AWI"/>
+                            <constraint firstAttribute="trailing" secondItem="t8P-79-uUs" secondAttribute="trailing" constant="20" symbolic="YES" id="iUl-Nz-t1U"/>
+                            <constraint firstItem="sFf-uJ-IPB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="mbM-kk-1K9"/>
+                            <constraint firstAttribute="trailing" secondItem="sFf-uJ-IPB" secondAttribute="trailing" constant="20" symbolic="YES" id="mvc-KE-CHg"/>
+                            <constraint firstAttribute="trailing" secondItem="41S-8g-3hH" secondAttribute="trailing" constant="20" symbolic="YES" id="xVe-gn-9Gh"/>
+                            <constraint firstItem="41S-8g-3hH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="xfQ-c2-fnb"/>
+                            <constraint firstItem="sBC-R1-hgN" firstAttribute="top" secondItem="t8P-79-uUs" secondAttribute="bottom" constant="8" symbolic="YES" id="yBJ-t1-8fZ"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Simple Queue Implementation" id="pFn-PZ-O7b"/>
+                    <connections>
+                        <outlet property="dequeuedLabel" destination="WB5-XP-3p5" id="oiG-hn-d3e"/>
+                        <outlet property="elementTF" destination="41S-8g-3hH" id="4Ca-Zd-pWC"/>
+                        <outlet property="elementsLabel" destination="sBC-R1-hgN" id="BFN-cP-5lQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="972" y="37.331334332833585"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="IMc-pe-wVr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vNQ-Wy-Wht" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SgX-lJ-mb3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="KgP-5W-jxi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WLb-0l-Ktz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="192.80000000000001" y="-645.42728635682158"/>
         </scene>
     </scenes>
 </document>

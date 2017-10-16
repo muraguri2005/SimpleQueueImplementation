@@ -14,6 +14,8 @@
 		796CAFAB1F94DC3D00FEA183 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 796CAFA91F94DC3D00FEA183 /* LaunchScreen.storyboard */; };
 		796CAFB61F94DC3D00FEA183 /* SimpleQueueImplementationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796CAFB51F94DC3D00FEA183 /* SimpleQueueImplementationTests.swift */; };
 		796CAFC11F94DC3D00FEA183 /* SimpleQueueImplementationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796CAFC01F94DC3D00FEA183 /* SimpleQueueImplementationUITests.swift */; };
+		796CAFCF1F94DC4F00FEA183 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796CAFCE1F94DC4F00FEA183 /* Node.swift */; };
+		796CAFD11F94DCAF00FEA183 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796CAFD01F94DCAF00FEA183 /* Queue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		796CAFBC1F94DC3D00FEA183 /* SimpleQueueImplementationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleQueueImplementationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		796CAFC01F94DC3D00FEA183 /* SimpleQueueImplementationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleQueueImplementationUITests.swift; sourceTree = "<group>"; };
 		796CAFC21F94DC3D00FEA183 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		796CAFCE1F94DC4F00FEA183 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		796CAFD01F94DCAF00FEA183 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				796CAFA71F94DC3D00FEA183 /* Assets.xcassets */,
 				796CAFA91F94DC3D00FEA183 /* LaunchScreen.storyboard */,
 				796CAFAC1F94DC3D00FEA183 /* Info.plist */,
+				796CAFCE1F94DC4F00FEA183 /* Node.swift */,
+				796CAFD01F94DCAF00FEA183 /* Queue.swift */,
 			);
 			path = SimpleQueueImplementation;
 			sourceTree = "<group>";
@@ -262,8 +268,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				796CAFCF1F94DC4F00FEA183 /* Node.swift in Sources */,
 				796CAFA31F94DC3D00FEA183 /* ViewController.swift in Sources */,
 				796CAFA11F94DC3D00FEA183 /* AppDelegate.swift in Sources */,
+				796CAFD11F94DCAF00FEA183 /* Queue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
